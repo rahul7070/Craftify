@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            display: flex;
+            border: 1px solid black;
+        }
+        .cont>div{
+            border: 1px solid red;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/index.html">home page</a>
+    <div class="cont">
+        <div class="new-reg">
+            <h1>NEW REGISTRATION</h1>
+            <form id="registration">
+                <input type="email" id="emaill" placeholder="Enter you mail">
+                <input type="password" id="pass" placeholder="make a password">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+
+        <div class="signin">
+            <h1>Sign In</h1>
+            <form id="signing" >
+                <input type="email" id="emailcheck" placeholder="Enter you mail">
+                <input type="password" id="passcheck"  placeholder="enter passwordd">
+                <input type="submit"  value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    let registrationform  = document.querySelector("#registration");
+    registrationform.addEventListener("submit", function(e){
+        e.preventDefault();
+        submitform();
+    });
+    function submitform(){
+        let userid = document.getElementById("emaill").value;
+        let pass = document.getElementById("pass").value;
+        let obj = {
+            userid,
+            pass
+        };
+        let signingdetail = JSON.parse(localStorage.getItem("signingdetail")) || [];
+        signingdetail.push(obj);
+        localStorage.setItem("signingdetail", JSON.stringify(signingdetail));
+        document.getElementById("emaill").value = "";
+        document.getElementById("pass").value = "";
+    }
+
+
+
+
+    let signing = document.querySelector("#signing");
+    signing.addEventListener("submit", function(e){
+        e.preventDefault();
+        checking();
+    })
+    function checking(){
+        let userid = document.getElementById("emailcheck").value;
+        let pass = document.getElementById("passcheck").value;
+        let signingdetail = JSON.parse(localStorage.getItem("signingdetail")) || [];
+        let flag = 0;
+        signingdetail.forEach(function(el, i){
+            if(userid==el.userid && pass==el.pass){
+                flag =1;
+            }
+        })
+        if(flag==1){
+            // alert("Yes");
+            window.location.assign("index.html")
+        }else{
+            // alert("No");
+        }
+        document.getElementById("emailcheck").value="";
+        document.getElementById("passcheck").value = "";
+    }
+</script>
+</html>

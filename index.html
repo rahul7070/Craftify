@@ -5,77 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .nav{
-            display: flex;
-            border: 1px solid black;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            margin: -8px;
-        }
-        .nav>button{
-            font-size: 20px;
-            background: transparent;
-            border-radius: 5px;
-            font-family: "Times New Roman", Times, serif;
-        }
-        .nav img{
-            width: 200px;
-        }
-        .nav > #btn-wishlist{
-            color: rgb(192, 21, 21);
-        }
-
-        .menu{
-            display: flex;
-            background-color: rgb(28, 28, 68);
-            /* border: 1px solid blue; */
-            justify-content: space-evenly;
-            align-items: center;
-            margin: -8px;
-            margin-top: 8px;
-        }
-        .menu>a{
-            color: white;
-            text-decoration: none;
-            padding-top: 6px;
-            height: 30px;
-        }
-        .poster{
-            display: flex;
-            background-image: url("https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/JANART23/HD/header-desk_99.jpg");
-            height: 500px;
-            align-items: center;
-        }
-        .poster>button{
-            padding: 10px;
-            background: transparent;
-            border-radius: 5px;
-            margin-left: 100px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .property{
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            /* border: 1px solid red; */
-            margin: -8px;
-        }
-        .property>div>img{
-            width: 100%;
-            height: 150px;
-        }
-        .product-booklet{
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            margin-top: 8px;
-        }
-        .product-booklet img{
-            width: 100%;
-        }
-        
-        
-    </style>
+    <link rel="stylesheet" href="/HomePageStyling.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -84,7 +15,7 @@
         <a href="/index.html"><img id="logo" src="/Craftify.png" alt=""></a>
         <input id="search-bar" type="text" placeholder="Search Anything">
         <a href="#"><i class="fa fa-search icon-search" style="font-size: 20px;"></i></a>
-        <button id="btn-signin">Sign In / Register</button>
+        <a href="/signin.html">Sign In / Register</a>
         <button id="btn-wishlist">&#10084 Wishlist</button>
         <button id="btn-cart"><i class="fa fa-shopping-cart icon-cart" style="font-size:36px"> Cart</i></button>
     </div>
@@ -103,6 +34,9 @@
     </div>
 
     <div class="property">
+        <div class="widgets-box">
+                 <img class="img-responsive" src="https://cdn.plotch.io/image/upload/C/V/1660916598_MS5wbmc=.png" alt="" style="cursor: default;pointer-events: none;" title="">
+        </div>
         <div>
             <img class="img-responsive" src="https://cdn.plotch.io/image/upload/C/V/1660916607_Mi5wbmc=.png" alt="" title="">
         </div>
@@ -117,13 +51,65 @@
         </div>
     </div>
 
-    <div class="product-booklet">
+    <div class="product-type">
         <a href=""><img src="https://cdn.plotch.io/image/upload/C/V/1671109983_Mi5wbmc=.png" alt=""></a>
         <a href=""><img src="https://cdn.plotch.io/image/upload/C/V/1671109989_My5wbmc=.png" alt=""></a>
         <a href=""><img src="https://cdn.plotch.io/image/upload/C/V/1671109994_NC5wbmc=.png" alt=""></a>
         <a href=""><img src="https://cdn.plotch.io/image/upload/C/V/1671109999_NS5wbmc=.png" alt=""></a>
         <a href=""><img src="https://cdn.plotch.io/image/upload/C/V/1671110006_Ni5wbmc=.png" alt=""></a>
     </div>
+
+    <div class="product-booklet">
+        <div class="card" id="card1">
+            <img src="https://cdn.plotch.io/image/upload/C/V/1671110303_SG9tZWRlY29yLnBuZw==.png" alt="">
+        </div>
+        <div class="card" id="card2">
+            <img src="https://cdn.plotch.io/image/upload/C/V/1671110307_NS5wbmc=.png" alt="">
+        </div><div class="card" id="card3">
+            <img src="https://cdn.plotch.io/image/upload/C/V/1671110314_Ni5wbmc=.png" alt="">
+        </div><div class="card" id="card4">
+            <img src="https://cdn.plotch.io/image/upload/C/V/1671110318_My5wbmc=.png" alt="">
+            
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="about">
+            <h3>About Us</h3>
+            <p>India's most convenient online grocery channel Buyerapp Fresh and Smart makes your grocery shopping even simpler. No more hassles of sweating it out in crowded markets, grocery shops & supermarkets - now shop from the comfort of your home; office, or on the move. We offer you the convenience of shopping for everything that you need for your home - be it fresh fruits & vegetables, rice, dals, oil, packaged food, dairy item, frozen, pet food, household cleaning items & personal care products from a single virtual store.</p>
+            
+        </div>
+        <div class="OUR COMPANY">
+            <p>About Us</p>
+            <p>Contact Us</p>
+        </div>
+        <div class="categories">
+            <h3>TOP CATEGORIES</h3>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <H3>PAYMENT OPTION</H3>
+            <img src="https://miro.medium.com/max/1000/1*BOrZtZYRwGEe8NlavcSzRA.png" alt="">
+        </div>
+        <div class="policy">
+            <h3>PRIVACY POLICY</h3>
+            <p>Privacy Policy</p>
+            <p>Terms Conditions</p>
+            <p>Shipping Policy</p>
+            <p>Return & Refund</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3>SUPPORT</h3>
+            <p>abccostomer@gmail.com</p>
+        <br>
+        </div>
+    </div>
   
 </body>
+<script src="./homepage.js"></script>
 </html>
