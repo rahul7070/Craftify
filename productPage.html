@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            display: flex;
+            /* border: 1px solid black; */
+            /* justify-content: space-between; */
+            align-items: center;
+            padding: 10px;
+            margin: -8px;
+            position: sticky;
+            top: 0;
+            background-color: rgb(24, 11, 48);
+        }
+        .nav>button{
+            font-size: 20px;
+            background: transparent;
+            border: none;
+            font-family: "Times New Roman", Times, serif;
+            color: white;
+        }
+        .nav img{
+            width: 200px;
+        }
+        .nav > #btn-wishlist{
+            color: rgb(192, 21, 21);
+            border-color: rgb(175, 10, 10);
+            position: relative;
+            left: 270px;
+        }
+        .nav>#search-bar{
+            padding: 10px;
+            width: 200px;
+            background-color: rgb(24, 11, 48);
+            margin: 0px 0px 0px 200px;
+        }
+        .nav>#signing{
+            text-decoration: none;
+            color: white;
+            /* margin: 0px 0px 0px 100px; */
+            position: relative;
+            left: 550px;
+        }
+        .nav .icon-search{
+            color: white;
+            position: relative;
+            left: 10px;
+        }
+        .nav .icon-cart{
+            position: relative;
+            left: 275px;
+        }
+
+        #chatbot-btn{
+            position: fixed;
+            top: 500px;
+            right: 0px;
+            background-color: rgb(224, 216, 216);
+            border: white;
+            border-radius: 5px;
+        }
+        #chatbot-btn:hover{
+            background-color: rgb(22, 5, 49);
+        }
+        #chatbot-img{
+            width: 50px;
+        }
+
+        .menu{
+            display: flex;
+            background-color: rgb(28, 28, 68);
+            /* border: 1px solid blue; */
+            justify-content: space-evenly;
+            align-items: center;
+            margin: -8px;
+            margin-top: 8px;
+            position: sticky;
+            top: 80px;
+        }
+        .menu>a{
+            color: white;
+            text-decoration: none;
+            padding-top: 6px;
+            height: 30px;
+        }
+
+        .main{
+            display: flex;
+            margin-top: 8px;
+        }
+        
+        .selectors{
+            border: 1px solid blue;
+            width: 250px;
+            box-shadow: aquamarine;
+            padding: 10px;
+            /* position: sticky; */
+        }
+        #order-sorting{
+            background-color: rgb(179, 172, 172);
+            font-size: 20px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            border: 0px;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        .price-sorting li{
+            list-style: none;
+        }
+
+        .cont{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            /* border: 1px solid black; */
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .cont>.card{
+            border: 1px solid red;
+            padding: 5px;
+            width: 250px;
+        }
+        .cont>.card img{
+            /* width: 100%; */
+            float: left;
+            width:  250px;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="/index.html"><img id="logo" src="/Craftify.png" alt=""></a>
+        <input id="search-bar" type="text" placeholder="Search Anything">
+        <a href="#"><i class="fa fa-search icon-search" style="font-size: 20px;"></i></a>
+        <a href="/signin.html" id="signing">Sign In / Register</a>
+        <button id="btn-wishlist">&#10084 Wishlist</button>
+        <button id="btn-cart"><i class="fa fa-shopping-cart icon-cart" style="font-size:36px"></i></button>
+    </div>
+
+    <div class="menu">
+        <a href="/index.html">All</a>
+        <a href="/productPage.html">Home Decor</a>
+        <a href="#">Customer Service</a>
+        <a href="#">Gift cards</a>
+        <a href="#">Sell</a>
+    </div>
+
+    <div class="main">
+        <div class="selectors">
+            <h1>Filter By</h1>
+            <select name="sorting" id="order-sorting">
+                <option value="">----Change Order----</option>
+                <option value="Ascending">Low to High</option>
+                <option value="Descending">High to Low</option>
+            </select>
+            <ul class="price-sorting">
+                <h3>By Price</h3>
+                <li><input type="checkbox" value="range1">  <200</li>
+                <li><input type="checkbox" value="range1">  200 - 500</li>
+                <li><input type="checkbox" value="range1">  500 - 700</li>
+                <li><input type="checkbox" value="range1">  700 - 1000</li>
+            </ul> 
+            <ul class="shipping-time">
+                <h3>Time to Ship</h3>
+                <li><input type="checkbox" value="type1">  1 Day</li>
+                <li><input type="checkbox" value="type2">  2 Days</li>
+                <li><input type="checkbox" value="type3">  4 Days</li>
+                <li><input type="checkbox" value="type4">  7 Days</li>
+                <li><input type="checkbox" value="type5">  10 Days</li>
+            </ul> 
+            <ul class="returnable-prod">
+                <h3>Returnable</h3>
+                <li><input type="checkbox" value="no"> No</li>
+                <li><input type="checkbox" value="yes">  Yes</li>
+            </ul> 
+            <ul class="store">
+                <h3>Store Name</h3>
+                <li><input type="checkbox" value="name1">  Apna Mart</li>
+                <li><input type="checkbox" value="name2">  Relience trends</li>
+                <li><input type="checkbox" value="name3">  Ameecart</li>
+                <li><input type="checkbox" value="name4">  Craftcare</li>
+                <li><input type="checkbox" value="name5">  Kairali</li>
+            </ul> 
+        </div>
+        <div class="cont"></div>
+    </div>
+    <button id="chatbot-btn"><img id="chatbot-img" src="https://buyourobot.b-cdn.net/wp-content/uploads/edd/2015/04/00044_police_bot_thumb_alpha.jpg" alt=""></button>  
+</body>
+
+</html>
+<script src="/productPage.js"></script>
