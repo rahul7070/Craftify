@@ -98,9 +98,27 @@
             display: flex;
             margin-top: 8px;
         }
+
+        #section{
+            display: block;
+            position: relative;
+            top: 30px;
+            padding: 10px;
+            width: 200px;
+            background-color: rgb(88, 167, 231);
+            border: 0px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            margin: auto;
+            margin-bottom: 30px;
+            color: black;
+            outline: none;
+        }
         
         .selectors{
-            border: 1px solid blue;
+            /* border: 1px solid blue; */
             width: 250px;
             box-shadow: aquamarine;
             padding: 10px;
@@ -114,7 +132,16 @@
             padding: 3px;
             border-radius: 5px;
         }
-        .price-sorting li{
+        #price-sorting li{
+            list-style: none;
+        }
+        .shipping-time li{
+            list-style: none;
+        }
+        .returnable-prod li{
+            list-style: none;
+        }
+        .store li{
             list-style: none;
         }
 
@@ -126,7 +153,7 @@
             margin-top: 20px;
         }
         .cont>.card{
-            border: 1px solid red;
+            /* border: 1px solid red; */
             padding: 5px;
             width: 250px;
         }
@@ -156,8 +183,7 @@
     <div class="nav">
         <a href="/index.html"><img id="logo" src="/Craftify.png" alt=""></a>
         <input id="search-bar" type="text" placeholder="Search Anything">
-        <!-- <button id="search"></button> -->
-        <a href="#"><i class="fa fa-search icon-search" style="font-size: 20px;"></i></a>
+        <button id="search"><i class="fa fa-search icon-search" style="font-size: 20px;"></i></button>
         <a href="/signin.html" id="signing">Sign In / Register</a>
         <button id="btn-wishlist">&#10084 Wishlist</button>
         <button id="btn-cart"><i class="fa fa-shopping-cart icon-cart" style="font-size:36px"></i></button>
@@ -170,6 +196,19 @@
         <a href="#">Gift cards</a>
         <a href="#">Sell</a>
     </div>
+
+    <select name="filterby" id="section">
+        <option value="">---Select Category---</option>
+        <option value="pot">pot</option>
+        <option value="sofa">Sofa</option>
+        <option value="lighting">lighting</option>
+        <option value="shelf">shelf</option>
+        <option value="curtain">curtain</option>
+        <option value="pillow">pillow</option>
+        <option value="glass">glass</option>
+        <option value="wall-decoration">wall-decoration</option>
+        <option value="dining-table">dining-table</option>
+    </select>
 
     <div class="main">
         <div class="selectors">
@@ -212,6 +251,5 @@
     </div>
     <button id="chatbot-btn"><img id="chatbot-img" src="https://buyourobot.b-cdn.net/wp-content/uploads/edd/2015/04/00044_police_bot_thumb_alpha.jpg" alt=""></button>  
 </body>
-
 </html>
 <script src="/productPage.js"></script>

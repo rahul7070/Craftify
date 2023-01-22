@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            background: url("/background.jpg");
+            background-size: cover;
+            background-position: center center;
+        }
+
         .nav{
             display: flex;
             /* border: 1px solid black; */
@@ -55,12 +61,40 @@
 
         .cont{
             display: flex;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             justify-content: space-around;
+            height: 500px;
+            padding: 20px;
         }
         .cont>div{
-            border: 1px solid red;
+            /* border: 1px solid red; */
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            width: 400px;
             padding: 10px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+            border-radius: 10px;
+            box-shadow: 7px 7px 60px #000;
+        }
+        .cont>div input{
+            width: 270px;
+            padding: 8px;
+            border: none;
+            outline: none;
+            margin: 1em 0;
+            border-radius: 10px;
+        }
+        .cont>div input[type="submit"]{
+            background: crimson;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 15px;
+            opacity: 1;
+        }
+        .cont>div>h1{
+            color: white;
         }
     </style>
 </head>
@@ -75,24 +109,40 @@
     </div>
 
     <br>
-    <a href="/index.html">home page</a>
 
     <div class="cont">
         <div class="new-reg">
+            <a href="/index.html">home page</a>
             <h1>NEW REGISTRATION</h1>
+            <br>
+            <br>
             <form id="registration">
                 <input type="email" id="emaill" placeholder="Enter you mail">
-                <input type="password" id="pass" placeholder="make a password">
+                <br>
+                <br>
+                <br>
+                <input type="password" id="pass" placeholder="Make a password">
+                <br>
+                <br>
+                <br>
                 <input type="submit" value="submit">
             </form>
         </div>
 
         <div class="signin">
             <h1>Sign In</h1>
-            <form id="signing" >
+            <br>
+            <br>
+            <form id="checkCredential" >
                 <input type="email" id="emailcheck" placeholder="Enter you mail">
-                <input type="password" id="passcheck"  placeholder="enter passwordd">
-                <input type="submit"  value="Submit">
+                <br>
+                <br>
+                <br>
+                <input type="password" id="passcheck"  placeholder="enter password">
+                <br>
+                <br>
+                <br>
+                <input type="submit"  value="submit">
             </form>
         </div>
     </div>
@@ -120,9 +170,10 @@
 
 
 
-    let signing = document.querySelector("#signing");
-    signing.addEventListener("submit", function(e){
-        e.preventDefault();
+
+    let checkCredential = document.querySelector("#checkCredential");
+    checkCredential.addEventListener("submit", function(event){
+        event.preventDefault();
         checking();
     })
     function checking(){
@@ -136,10 +187,10 @@
             }
         })
         if(flag==1){
-            // alert("Yes");
+            // alert("yes")
             window.location.assign("index.html")
         }else{
-            // alert("No");
+            alert("Wrong Credential");
         }
         document.getElementById("emailcheck").value="";
         document.getElementById("passcheck").value = "";

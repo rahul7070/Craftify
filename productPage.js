@@ -9,7 +9,7 @@ async function fetchdata() {
     try {
         let res = await fetch("./product.json");
         res = await res.json();
-        globalData = res;
+        globalData = [...res];
         console.log(res);
         res = changedata(res);
         display(res);
@@ -38,6 +38,8 @@ function display(data) {
                 cart.push(obj)
                 localStorage.setItem("cartdata", JSON.stringify(cart));
                 btn.innerText = "Added To cart";
+            } else {
+                alert("Already Added");
             }
         })
 
@@ -79,20 +81,23 @@ cartButton.addEventListener("click", () => {
 })
 
 
-// let form = document.querySelector("form");
-
-// form.addEventListener("submit",(e)=>{
-//     e.preventDefault();
-//     let searchParam = document.getElementById("search-bar").value;
-//     let newdata = globalData.filter((ele)=>{
-//       if(ele.name.toUpperCase().includes(searchParam.toUpperCase())===true){
-//         return true;
-//       }else{
-//         return false;
-//       }
-//     })
-//     display(newdata);
-// })
+let searchingProduct = document.querySelector("#search");
+searchingProduct.addEventListener("click", function () {
+    let val = document.querySelector("#search-bar").value;
+    let array = [];
+    if (val == "") {
+        display(globalData);
+    } else {
+        globalData.forEach((el, i) => {
+            if (el.name == val) {
+                array.push(el);
+            } else {
+                return false;
+            }
+        })
+        display(array);
+    }
+})
 
 let order = document.getElementById("order-sorting");
 order.addEventListener("change", () => {
@@ -128,11 +133,151 @@ order.addEventListener("change", () => {
     }
 })
 
-// let check = document.getElementById("price-sorting");
-// check.addEventListener("change", (e)=>{
-//     // console.log("checking");
-//     if(e.target.checked){
-//         console.log("done");
-//     }
-// })
+let check = document.getElementById("price-sorting");
+check.addEventListener("change", (e) => {
+    if (e.target.checked) {
+        let newdata = [];
+        if (e.target.value == "range1") {
+            globalData.forEach((el, i) => {
+                if (el.price <= 200) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "range2") {
+            globalData.forEach((el, i) => {
+                if (el.price > 200 && el.price <= 500) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "range3") {
+            globalData.forEach((el, i) => {
+                if (el.price > 500 && el.price <= 700) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "range4") {
+            globalData.forEach((el, i) => {
+                if (el.price > 700) {
+                    newdata.push(el);
+                }
+            })
+        }
+        display(newdata);
+    }
+})
+
+let check2 = document.querySelector(".shipping-time");
+check2.addEventListener("change", (e) => {
+    if (e.target.checked) {
+        let newdata = [];
+        if (e.target.value == "type1") {
+            globalData.forEach((el, i) => {
+                if (el.price <= 200) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "type2") {
+            globalData.forEach((el, i) => {
+                if (el.price > 200 && el.price <= 500) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "type3") {
+            globalData.forEach((el, i) => {
+                if (el.price > 200 && el.price <= 500) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "type4") {
+            globalData.forEach((el, i) => {
+                if (el.price > 200 && el.price <= 500) {
+                    newdata.push(el);
+                }
+            })
+        }
+        display(newdata);
+    }
+})
+
+let check3 = document.querySelector(".returnable-prod");
+check3.addEventListener("change", (e) => {
+    if (e.target.checked) {
+        let newdata = [];
+        if (e.target.value == "no") {
+            globalData.forEach((el, i) => {
+                if (el.price <= 200) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "yes") {
+            globalData.forEach((el, i) => {
+                if (el.price > 200 && el.price <= 500) {
+                    newdata.push(el);
+                }
+            })
+        }
+        display(newdata);
+    }
+})
+
+let check4 = document.querySelector(".store");
+check4.addEventListener("change", (e) => {
+    if (e.target.checked) {
+        let newdata = [];
+        if (e.target.value == "name1") {
+            globalData.forEach((el, i) => {
+                if (el.price <= 200) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "name2") {
+            globalData.forEach((el, i) => {
+                if (el.price > 200 && el.price <= 500) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "name3") {
+            globalData.forEach((el, i) => {
+                if (el.price > 200 && el.price <= 500) {
+                    newdata.push(el);
+                }
+            })
+        }
+        if (e.target.value == "name4") {
+            globalData.forEach((el, i) => {
+                if (el.price > 200 && el.price <= 500) {
+                    newdata.push(el);
+                }
+            })
+        }
+        display(newdata);
+    }
+})
+
+let category = document.getElementById("section")
+category.addEventListener("change", (e) => {
+    e.preventDefault();
+    filterdata();
+})
+function filterdata() {
+    console.log("cominnggg")
+    let filterval = category.value;
+    if (filterval == "") {
+        display(globalData)
+    } else {
+        let newdata = globalData.filter((product) => {
+            return product.dept == filterval;
+        })
+        display(newdata);
+    }
+}
 
