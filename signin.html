@@ -6,9 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .nav{
+            display: flex;
+            /* border: 1px solid black; */
+            /* justify-content: space-between; */
+            align-items: center;
+            padding: 10px;
+            margin: -8px;
+            position: sticky;
+            top: 0;
+            background-color: rgb(14, 3, 36);
+        }
+        .nav>button{
+            font-size: 20px;
+            background: transparent;
+            border: none;
+            font-family: "Times New Roman", Times, serif;
+            color: white;
+        }
+        .nav img{
+            width: 200px;
+        }
+        .nav > #btn-wishlist{
+            color: rgb(192, 21, 21);
+            border-color: rgb(175, 10, 10);
+            position: relative;
+            left: 165px;
+        }
+        .nav>#search-bar{
+            padding: 10px;
+            width: 300px;
+            border-radius: 20px;
+            background-color: rgb(24, 11, 48);
+            margin: 0px 0px 0px 200px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border: 0px;
+            font-size: 15px;
+            /* padding-left: 20px; */
+            color: gray;
+        }
+        .nav>#signing{
+            text-decoration: none;
+            color: white;
+            /* margin: 0px 0px 0px 100px; */
+            position: relative;
+            left: 450px;
+        }
+
         .cont{
             display: flex;
             border: 1px solid black;
+            justify-content: space-around;
         }
         .cont>div{
             border: 1px solid red;
@@ -17,7 +65,18 @@
     </style>
 </head>
 <body>
+    <div class="nav">
+        <a href="#"><img id="logo" src="/Craftify.png" alt=""></a>
+        <input id="search-bar" type="text" placeholder="Search Anything">
+        <a href="#"><i class="fa fa-search icon-search" style="font-size: 20px;"></i></a>
+        <a href="/signin.html" id="signing">Sign In / Register</a>
+        <button id="btn-wishlist">&#10084 Wishlist</button>
+        <button id="btn-cart"><i class="fa fa-shopping-cart icon-cart" style="font-size:36px"></i></button>
+    </div>
+
+    <br>
     <a href="/index.html">home page</a>
+
     <div class="cont">
         <div class="new-reg">
             <h1>NEW REGISTRATION</h1>

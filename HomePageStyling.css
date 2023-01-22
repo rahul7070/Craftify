@@ -1,23 +1,73 @@
 
         .nav{
             display: flex;
-            border: 1px solid black;
-            justify-content: space-between;
+            /* border: 1px solid black; */
+            /* justify-content: space-between; */
             align-items: center;
             padding: 10px;
             margin: -8px;
+            position: sticky;
+            top: 0;
+            background-color: rgb(14, 3, 36);
         }
         .nav>button{
             font-size: 20px;
             background: transparent;
-            border-radius: 5px;
+            border: none;
             font-family: "Times New Roman", Times, serif;
+            color: white;
         }
         .nav img{
             width: 200px;
         }
         .nav > #btn-wishlist{
             color: rgb(192, 21, 21);
+            border-color: rgb(175, 10, 10);
+            position: relative;
+            left: 165px;
+        }
+        .nav>#search-bar{
+            padding: 10px;
+            width: 300px;
+            border-radius: 20px;
+            background-color: rgb(24, 11, 48);
+            margin: 0px 0px 0px 200px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border: 0px;
+            font-size: 15px;
+            /* padding-left: 20px; */
+            color: gray;
+        }
+        .nav>#signing{
+            text-decoration: none;
+            color: white;
+            /* margin: 0px 0px 0px 100px; */
+            position: relative;
+            left: 450px;
+        }
+        .nav .icon-search{
+            color: white;
+            position: relative;
+            left: 10px;
+        }
+        .nav .icon-cart{
+            position: relative;
+            left: 172px;
+        }
+
+        #chatbot-btn{
+            position: fixed;
+            top: 500px;
+            right: 0px;
+            background-color: rgb(224, 216, 216);
+            border: white;
+            border-radius: 5px;
+        }
+        #chatbot-btn:hover{
+            background-color: rgb(22, 5, 49);
+        }
+        #chatbot-img{
+            width: 50px;
         }
 
         .menu{
@@ -27,7 +77,8 @@
             justify-content: space-evenly;
             align-items: center;
             margin: -8px;
-            margin-top: 8px;
+            position: sticky;
+            top: 78px;
         }
         .menu>a{
             color: white;
@@ -44,12 +95,19 @@
             /* border: 1px solid black; */
             margin: -8px;
         }
-        .poster>button{
+        .poster>#explore{
             padding: 10px;
             background: transparent;
             border-radius: 5px;
             margin-left: 100px;
             font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            border-color: grey;
+            color: white;
+        }
+        .poster>#explore:hover{
+            background-color: gray;
+
         }
 
         .property{
