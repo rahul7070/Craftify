@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(243, 230, 230);
+        }
+
+        .nav {
+            display: flex;
+            /* border: 1px solid black; */
+            /* justify-content: space-between; */
+            align-items: center;
+            padding: 10px;
+            margin: -8px;
+            /* position: sticky;
+            top: 0; */
+            background-color: rgb(14, 3, 36);
+        }
+
+        .nav>button {
+            font-size: 20px;
+            background: transparent;
+            border: none;
+            font-family: "Times New Roman", Times, serif;
+            color: white;
+        }
+
+        .nav img {
+            width: 200px;
+        }
+
+        .nav>#btn-wishlist {
+            color: rgb(192, 21, 21);
+            border-color: rgb(175, 10, 10);
+            position: relative;
+            left: 165px;
+        }
+
+        .nav>#search-bar {
+            padding: 10px;
+            width: 300px;
+            border-radius: 20px;
+            background-color: rgb(24, 11, 48);
+            margin: 0px 0px 0px 200px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border: 0px;
+            font-size: 15px;
+            /* padding-left: 20px; */
+            color: gray;
+        }
+
+        .nav>#signing {
+            text-decoration: none;
+            color: white;
+            /* margin: 0px 0px 0px 100px; */
+            position: relative;
+            left: 450px;
+        }
+
+        .nav .icon-search {
+            color: white;
+            position: relative;
+            left: 10px;
+        }
+
+        .nav .icon-cart {
+            position: relative;
+            left: 172px;
+        }
+
+        #chatbot-btn {
+            position: fixed;
+            top: 500px;
+            right: 0px;
+            background-color: rgb(224, 216, 216);
+            border: white;
+            border-radius: 5px;
+        }
+
+        #chatbot-btn:hover {
+            background-color: rgb(22, 5, 49);
+        }
+
+        #chatbot-img {
+            width: 50px;
+        }
+
+        .menu {
+            display: flex;
+            background-color: rgb(28, 28, 68);
+            /* border: 1px solid blue; */
+            justify-content: space-evenly;
+            align-items: center;
+            margin: -8px;
+            position: sticky;
+            top: 0px;
+        }
+
+        .menu>a {
+            color: white;
+            text-decoration: none;
+            padding-top: 6px;
+            height: 30px;
+        }
+
+        .main {
+            display: flex;
+            /* border: 1px solid black; */
+            margin-top: 20px;
+            padding: 10px;
+            justify-content: space-between;
+        }
+
+        .main>.productContainer {
+            display: grid;
+            /* padding: 20px; */
+            grid-template-columns: repeat(3, 1fr);
+            width: 80%;
+            gap: 20px;
+            /* border: 1px solid red; */
+        }
+
+        .main>.account {
+            /* border: 1px solid blue; */
+            width: 17%;
+            padding: 10px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+
+        .main>.productContainer>.box {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        .main>.productContainer>.box img {
+            /* width: 100%; */
+            float: left;
+            width: 310px;
+            height: 310px;
+            object-fit: cover;
+        }
+
+        .box>#quantity {
+            display: inline;
+        }
+
+        .box>button {
+            margin: 10px;
+        }
+
+        .payment {
+            display: flex;
+            width: 90%;
+            background-color: white;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .payment>.checkout {
+            /* border: 1px solid black; */
+            text-align: center;
+            padding-top: 50px;
+            margin: auto;
+            width: 50%;
+            height: 300px;
+            color: rgb(12, 12, 59);
+            font-size: large;
+        }
+
+        .checkout>button {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(254, 216, 21);
+            border: 0px;
+            border-radius: 12px;
+            margin-top: 30px;
+            font-weight: bolder;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="/index.html"><img id="logo" src="/Craftify.png" alt=""></a>
+        <input id="search-bar" type="text" placeholder="Search Anything">
+        <button id="search-button"><a href="#"><i class="fa fa-search icon-search"
+                    style="font-size: 20px;"></i></a></button>
+        <!-- <a href="#"><i class="fa fa-search icon-search" style="font-size: 20px;"></i></a> -->
+        <a href="/signin.html" id="signing">Sign In / Register</a>
+        <button id="btn-wishlist">&#10084 Wishlist</button>
+        <button id="btn-cart"><i class="fa fa-shopping-cart icon-cart" style="font-size:36px"></i></button>
+
+    </div>
+
+    <div class="menu">
+        <a href="/index.html">All</a>
+        <a href="/productPage.html">Home Decor</a>
+        <a href="#">Customer Service</a>
+        <a href="#">Gift cards</a>
+        <a href="#">Sell</a>
+    </div>
+
+    <br>
+    <br>
+    <h1 id="head">Ordered List</h1>
+    <hr>
+
+    <div class="main">
+        <div class="productContainer">
+
+        </div>
+
+        <div class="account">
+            <h2>Subtotal :</h2>
+            <p>No. of Items : <span id="count"></span></p>
+            <h3>Amount : <span id="money"></span></h3>
+        </div>
+    </div>
+
+    <div class="payment">
+        <img src="https://img.freepik.com/free-vector/man-transferring-money-woman-via-smartphone-online-transaction-banking-flat-vector-illustration-finance-digital-technology-concept_74855-10107.jpg?size=626&ext=jpg&uid=R90474079&semt=ais"
+            alt="">
+        <div class="checkout">
+            <h2>Select payment Mode</h2>
+            <button id="transaction">Proceed to Payment</button>
+        </div>
+
+    </div>
+
+    <button id="chatbot-btn"><img id="chatbot-img"
+            src="https://buyourobot.b-cdn.net/wp-content/uploads/edd/2015/04/00044_police_bot_thumb_alpha.jpg"
+            alt=""></button>
+</body>
+
+<script>
+    let cart = document.querySelector(".productContainer");
+    let data = JSON.parse(localStorage.getItem("cartdata")) || [];
+
+    display(data);
+    function display(data) {
+        cart.innerHTML = "";
+        data.forEach((el, i) => {
+            let card = document.createElement("div");
+            card.setAttribute("class", "box");
+            let image = document.createElement("img");
+            let name = document.createElement("h3");
+            let price = document.createElement("h2");
+            let dept = document.createElement("h4");
+            let incre = document.createElement("button");
+            let decre = document.createElement("button");
+            let remove = document.createElement("button");
+            let quan = document.createElement("h4");
+
+            quan.setAttribute("id", "quantity");
+            quan.innerText = el.quantity;
+            incre.innerText = "+";
+            decre.innerText = "-";
+            remove.innerText = "Remove";
+            remove.addEventListener("click", () => {
+                let newdata = data.filter((e, ind) => {
+                    return ind != i;
+                })
+                localStorage.setItem("cartdata", JSON.stringify(newdata));
+                calculate(newdata);
+                display(newdata);
+            })
+            incre.addEventListener("click", () => {
+                el = el.quantity++;
+                localStorage.setItem("cartdata", JSON.stringify(data));
+                calculate(data);
+                display(data);
+            })
+            decre.addEventListener("click", () => {
+                if (el.quantity > 1) {
+                    el = el.quantity--;
+                    localStorage.setItem("cartdata", JSON.stringify(data));
+                    calculate(data);
+                    display(data);
+                } else {
+                    let newdata = data.filter((e, ind) => {
+                        return ind != i;
+                    })
+                    localStorage.setItem("cartdata", JSON.stringify(newdata))
+                    calculate(newdata);
+                    display(newdata);
+                }
+            })
+
+            image.setAttribute("src", el.image);
+            name.innerText = el.name;
+            price.innerText = el.price;
+            dept.textContent = el.dept;
+
+            card.append(image, name, price, dept, decre, quan, incre, remove);
+            cart.append(card);
+        })
+    }
+
+    let total = document.querySelector("#money");
+    let count = document.querySelector("#count");
+    calculate(data);
+    function calculate(data) {
+        let c = 0, sum = 0;
+        for (let i = 0; i < data.length; i++) {
+            c += data[i].quantity;
+            sum += +(data[i].price) * data[i].quantity;
+        }
+        total.innerText = sum;
+        count.innerText = c;
+    }
+
+</script>
+
+</html>
